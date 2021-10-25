@@ -26,22 +26,42 @@ header {
 
 /* main */
 #container {
-    height: 500px;
     width: 60%;
     margin: auto;
-    background-color: violet;
 }
 
 .post {
     background-color: white;
     margin-bottom: 2rem;
+    padding: 1rem;
 }
 
 .avatar {
     width: 50px;
     height: 50px;
+    margin-right: 1.5rem;
 }
 .avatar > img {
     width: 100%;
     border-radius: 50%;
+}
+
+.content {
+    margin-top: 1rem;
+}
+
+.image {
+    width: 100%;
+    margin: 1rem 0 1.5rem;
+}
+
+.likes {
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.like_button {
+    padding: .5rem;
+    border-radius: .5rem;
 }
