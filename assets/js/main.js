@@ -13,6 +13,7 @@ const postsList = [
         immagine: `https://i.picsum.photos/id/876/300/300.jpg?hmac=0z82x1fBm9aEHm_PXKutEx5QszAhpu-TjYk5CoSSeug`,
         autore: {
             nome: `Nicola`,
+            cognome: 'Perera',
             avatar: `https://i.picsum.photos/id/177/300/300.jpg?hmac=iqXyonsAi67PWRf_09YhPkmp81Thf9Pch6MNvOkGiGo`
             
         },
@@ -27,6 +28,7 @@ const postsList = [
         immagine: `https://i.picsum.photos/id/640/300/300.jpg?hmac=gJjzkqqcGzn0WH0oXNjktCL4kTTnFGPJg_J3yK4O0-8`,
         autore: {
             nome: `Francesco`,
+            cognome: 'Perera',
             avatar: `https://i.picsum.photos/id/370/300/300.jpg?hmac=uPgN6G6WHxo15EQGDINlk-XITx5JruJvSuTSHC2eVzA`
         },
         likes: 789,
@@ -40,6 +42,21 @@ const postsList = [
         immagine: `https://i.picsum.photos/id/1022/300/300.jpg?hmac=3C_A5sVNnYzG-YGGgkUMD9h7xx3CvX7-ielXa7qD5nw`,
         autore: {
             nome: `Francesco`,
+            cognome: 'Terera',
+            avatar: ``
+        },
+        likes: 789,
+        myLike: 1,
+        data: `13/05/90`
+    },
+
+    {
+        id: `sport`,
+        contenuto: `partita di calcio`,
+        immagine: `https://i.picsum.photos/id/1022/300/300.jpg?hmac=3C_A5sVNnYzG-YGGgkUMD9h7xx3CvX7-ielXa7qD5nw`,
+        autore: {
+            nome: `Francesco`,
+            cognome: 'Perera',
             avatar: `https://i.picsum.photos/id/804/300/300.jpg?hmac=GdEls3mVX5M9dDhc3JbnyK97Ls7Yl9ax0VphYK1vMDw`
         },
         likes: 789,
@@ -53,19 +70,7 @@ const postsList = [
         immagine: `https://i.picsum.photos/id/1022/300/300.jpg?hmac=3C_A5sVNnYzG-YGGgkUMD9h7xx3CvX7-ielXa7qD5nw`,
         autore: {
             nome: `Francesco`,
-            avatar: `https://i.picsum.photos/id/804/300/300.jpg?hmac=GdEls3mVX5M9dDhc3JbnyK97Ls7Yl9ax0VphYK1vMDw`
-        },
-        likes: 789,
-        myLike: 1,
-        data: `13/05/90`
-    },
-
-    {
-        id: `sport`,
-        contenuto: `partita di calcio`,
-        immagine: `https://i.picsum.photos/id/1022/300/300.jpg?hmac=3C_A5sVNnYzG-YGGgkUMD9h7xx3CvX7-ielXa7qD5nw`,
-        autore: {
-            nome: `Francesco`,
+            cognome: 'Perera',
             avatar: `https://i.picsum.photos/id/804/300/300.jpg?hmac=GdEls3mVX5M9dDhc3JbnyK97Ls7Yl9ax0VphYK1vMDw`
         },
         likes: 789,
@@ -76,11 +81,11 @@ const postsList = [
     
 ];
 
-// console.log(postsList);
-
 // collegamento alla lista contenitore dei post
 const postsListRef = document.getElementById('container');
-// console.log(postsListRef);
+
+// post a cui ho messo like
+const likedPostsList = [1,3];
 
 for (let i = 0; i < postsList.length; i++) {
     
@@ -88,12 +93,12 @@ for (let i = 0; i < postsList.length; i++) {
     const thisPost = `<div id="post_${i}" class="post">
        <div class="author row">
 
-           <div class="avatar">
+           <div id="avatar_${i}" class="avatar">
             <img src="${postsList[i].autore.avatar}" alt="">
            </div>
 
            <div class="name_date">
-               <h3 class="author_name">${postsList[i].autore.nome}</h3>
+               <h3 class="author_name">${postsList[i].autore.nome} ${postsList[i].autore.cognome}</h3>
                <p class="date">${postsList[i].data}</p>
            </div>
 
@@ -110,12 +115,12 @@ for (let i = 0; i < postsList.length; i++) {
 
     </div>`
     postsListRef.innerHTML += thisPost;
-    
-    // post a cui abbiamo messo mi piace (ho messo "mi piace" a tutti i post pari)
-    if (i % 2) {
-        
-        const likedPost = document.getElementById(`post_${i}`)
-        likedPost.classList.add("liked_post");
+
+    if (postsList[i].autore.avatar == '') {
+        const firtNameFirstLetter = postsList[i].autore.nome[0];
+        const secondNameFirstLetter = postsList[i].autore.cognome[0];
+        const missingAvatar = document.getElementById(`avatar_${i}`);
+        missingAvatar.innerHTML = `<h1>${firtNameFirstLetter} ${secondNameFirstLetter}</h1>`
     }
     
     // collegamento al pulsante like del post
@@ -123,19 +128,28 @@ for (let i = 0; i < postsList.length; i++) {
     
     // button click function
     like_button.addEventListener('click', function() {
-        like_button.classList.add("liked_button");
-        const totalLikesCount = postsList[i].likes + 1;
-       
+
+        if (!likedPostsList.includes(i)) {
+        likedPostsList.push(i);
+        }
+
         document.getElementById(`post_${i}`).classList.add('liked_post');
+        const totalLikesCount = postsList[i].likes + 1;
 
         const finalLikesCount = document.getElementsByClassName('likes');
-        const totalLikes =` <button id="button_${i}" class="like_button">Mi Piace</button>
+        const totalLikes =` <button id="button_${i}" class="like_button liked_button">Mi Piace</button>
                             <p class="current_likes">Piace a ${totalLikesCount} persone</p>`;
         finalLikesCount[i].innerHTML = totalLikes;
+        if (likedPostsList.includes(i)) {
         
-        
+            const likedPost = document.getElementsByClassName(`button_${i}`)
+            likedPost.classList.add('liked_button');
+        }
     });
+
+
 }
+
 
 // console.log(likedPostList);
 
