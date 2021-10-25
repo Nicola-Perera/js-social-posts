@@ -21,3 +21,14 @@ header {
 }
 
 /* main */
+.container {
+    width: 60%;
+    margin: auto;
+    height: 200px;
+    background-color: violet;
+}
+
+.post {
+    background-color: white;
+    height: 100px;
+}
