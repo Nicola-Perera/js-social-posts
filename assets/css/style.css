@@ -1,0 +1,23 @@
+/* reste rules */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* common rules */
+body {
+    background-color: cadetblue;
+}
+
+/* header */
+header {
+    
+    color: white;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* main */
