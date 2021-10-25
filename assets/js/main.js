@@ -58,6 +58,19 @@ const postsList = [
         likes: 789,
         myLike: 1,
         data: `13/05/90`
+    },
+
+    {
+        id: `sport`,
+        contenuto: `partita di calcio`,
+        immagine: `https://i.picsum.photos/id/1022/300/300.jpg?hmac=3C_A5sVNnYzG-YGGgkUMD9h7xx3CvX7-ielXa7qD5nw`,
+        autore: {
+            nome: `Francesco`,
+            avatar: `https://i.picsum.photos/id/804/300/300.jpg?hmac=GdEls3mVX5M9dDhc3JbnyK97Ls7Yl9ax0VphYK1vMDw`
+        },
+        likes: 789,
+        myLike: 1,
+        data: `13/05/90`
     }
 
     
@@ -70,11 +83,8 @@ const postsListRef = document.getElementById('container');
 // console.log(postsListRef);
 
 for (let i = 0; i < postsList.length; i++) {
-    // const post = postsList[i];
-
-    // for (const key in post) {
-    //         console.log(post[key]);
-    //     }
+    
+    // creo e aggiungo il post alla dom
     const thisPost = `<div id="post_${i}" class="post">
        <div class="author row">
 
@@ -99,14 +109,34 @@ for (let i = 0; i < postsList.length; i++) {
        </div>
 
     </div>`
-        postsListRef.innerHTML += thisPost;
-
-        // collegamento al pulsante like del post
-        const like_button = document.getElementById(`button_${i}`);
-        like_button.addEventListener('click', function() {
-            console.log(like_button);
-        });
+    postsListRef.innerHTML += thisPost;
+    
+    // post a cui abbiamo messo mi piace (ho messo "mi piace" a tutti i post pari)
+    if (i % 2) {
         
+        const likedPost = document.getElementById(`post_${i}`)
+        likedPost.classList.add("liked_post");
     }
+    
+    // collegamento al pulsante like del post
+    const like_button = document.getElementById(`button_${i}`);
+    
+    // button click function
+    like_button.addEventListener('click', function() {
+        like_button.classList.add("liked_button");
+        const totalLikesCount = postsList[i].likes + 1;
+       
+        document.getElementById(`post_${i}`).classList.add('liked_post');
 
-    // console.log(postsList[1].autore.avatar);
+        const finalLikesCount = document.getElementsByClassName('likes');
+        const totalLikes =` <button id="button_${i}" class="like_button">Mi Piace</button>
+                            <p class="current_likes">Piace a ${totalLikesCount} persone</p>`;
+        finalLikesCount[i].innerHTML = totalLikes;
+        
+        
+    });
+}
+
+// console.log(likedPostList);
+
+    
