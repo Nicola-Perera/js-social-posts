@@ -9,7 +9,7 @@
 const postsList = [
     {
         id: `vacanze`,
-        contenuto: `itinerario del viaggio`,
+        contenuto: `itinerario del viaggio: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit qui ratione vitae sit quod illum possimus fuga voluptates quo dolorum earum, aperiam ipsa rem maiores maxime consectetur sequi iusto adipisci magnam natus, tenetur totam quibusdam cupiditate minima. Aliquam deleniti in earum odio aliquid numquam veritatis accusamus, amet sed eum sapiente.`,
         immagine: `https://i.picsum.photos/id/876/300/300.jpg?hmac=0z82x1fBm9aEHm_PXKutEx5QszAhpu-TjYk5CoSSeug`,
         autore: {
             nome: `Nicola`,
@@ -18,64 +18,59 @@ const postsList = [
             
         },
         likes: 123,
-        myLike: 0,
         data: `25/10/21`
     },
 
     {
         id: `sport`,
-        contenuto: `partita di calcio`,
+        contenuto: `partita di calcio: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit qui ratione vitae sit quod illum possimus fuga voluptates quo dolorum earum, aperiam ipsa rem maiores maxime consectetur sequi iusto adipisci magnam natus, tenetur totam quibusdam cupiditate minima. Aliquam deleniti in earum odio aliquid numquam veritatis accusamus, amet sed eum sapiente.`,
         immagine: `https://i.picsum.photos/id/640/300/300.jpg?hmac=gJjzkqqcGzn0WH0oXNjktCL4kTTnFGPJg_J3yK4O0-8`,
         autore: {
             nome: `Francesco`,
-            cognome: 'Perera',
+            cognome: 'Marangon',
             avatar: `https://i.picsum.photos/id/370/300/300.jpg?hmac=uPgN6G6WHxo15EQGDINlk-XITx5JruJvSuTSHC2eVzA`
         },
         likes: 789,
-        myLike: 1,
         data: `13/05/90`
     },
 
     {
-        id: `sport`,
-        contenuto: `partita di calcio`,
+        id: `lavoro`,
+        contenuto: `riunione: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit qui ratione vitae sit quod illum possimus fuga voluptates quo dolorum earum, aperiam ipsa rem maiores maxime consectetur sequi iusto adipisci magnam natus, tenetur totam quibusdam cupiditate minima. Aliquam deleniti in earum odio aliquid numquam veritatis accusamus, amet sed eum sapiente.`,
         immagine: `https://i.picsum.photos/id/1022/300/300.jpg?hmac=3C_A5sVNnYzG-YGGgkUMD9h7xx3CvX7-ielXa7qD5nw`,
         autore: {
-            nome: `Francesco`,
-            cognome: 'Terera',
+            nome: `Vittorio`,
+            cognome: 'Emanuele',
+            avatar: `https://i.picsum.photos/id/1061/300/300.jpg?hmac=UaTB_zKDW_DwYBLy4W6fW9C2-_ZvCKmbkON_bZxVZDg`
+        },
+        likes: 35,
+        data: `29/02/19`
+    },
+
+    {
+        id: `famiglia`,
+        contenuto: `pranzo di natale: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit qui ratione vitae sit quod illum possimus fuga voluptates quo dolorum earum, aperiam ipsa rem maiores maxime consectetur sequi iusto adipisci magnam natus, tenetur totam quibusdam cupiditate minima. Aliquam deleniti in earum odio aliquid numquam veritatis accusamus, amet sed eum sapiente.`,
+        immagine: `https://i.picsum.photos/id/844/300/300.jpg?hmac=cz7Fh4OjTE9Wv0TUWuua5rr-sqsA6-_NcVlD_SqcgS4`,
+        autore: {
+            nome: `Federico`,
+            cognome: 'Stoppa',
             avatar: ``
         },
-        likes: 789,
-        myLike: 1,
-        data: `13/05/90`
+        likes: 97,
+        data: `31/12/96`
     },
 
     {
-        id: `sport`,
-        contenuto: `partita di calcio`,
-        immagine: `https://i.picsum.photos/id/1022/300/300.jpg?hmac=3C_A5sVNnYzG-YGGgkUMD9h7xx3CvX7-ielXa7qD5nw`,
+        id: `amici`,
+        contenuto: `discoteca: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit qui ratione vitae sit quod illum possimus fuga voluptates quo dolorum earum, aperiam ipsa rem maiores maxime consectetur sequi iusto adipisci magnam natus, tenetur totam quibusdam cupiditate minima. Aliquam deleniti in earum odio aliquid numquam veritatis accusamus, amet sed eum sapiente.`,
+        immagine: `https://i.picsum.photos/id/70/300/300.jpg?hmac=oRHyAIWwDMXlW_uD8tkIiRYsMVJivtQabzxyQooNIyI`,
         autore: {
-            nome: `Francesco`,
-            cognome: 'Perera',
-            avatar: `https://i.picsum.photos/id/804/300/300.jpg?hmac=GdEls3mVX5M9dDhc3JbnyK97Ls7Yl9ax0VphYK1vMDw`
+            nome: `Andrea`,
+            cognome: 'Sartori',
+            avatar: `https://i.picsum.photos/id/524/300/300.jpg?hmac=MpxUkv6gcBsbfdS64thmQBCSgpyfNIXq2Y8_Gx3SupA`
         },
-        likes: 789,
-        myLike: 1,
-        data: `13/05/90`
-    },
-
-    {
-        id: `sport`,
-        contenuto: `partita di calcio`,
-        immagine: `https://i.picsum.photos/id/1022/300/300.jpg?hmac=3C_A5sVNnYzG-YGGgkUMD9h7xx3CvX7-ielXa7qD5nw`,
-        autore: {
-            nome: `Francesco`,
-            cognome: 'Perera',
-            avatar: `https://i.picsum.photos/id/804/300/300.jpg?hmac=GdEls3mVX5M9dDhc3JbnyK97Ls7Yl9ax0VphYK1vMDw`
-        },
-        likes: 789,
-        myLike: 1,
-        data: `13/05/90`
+        likes: 615,
+        data: `01/01/01`
     }
 
     
