@@ -41,9 +41,33 @@ const postsListRef = document.getElementById('container');
 // console.log(postsListRef);
 
 for (let i = 0; i < postsList.length; i++) {
-    const post = postsList[i];
+    // const post = postsList[i];
 
-    for (const key in post) {
-            console.log(post[key]);
-        }
+    // for (const key in post) {
+    //         console.log(post[key]);
+    //     }
+       const thisPost = `<div class="post">
+       <div class="author">
+
+           <div class="avatar">${postsList[i].autore.avatar}</div>
+
+           <div class="name_date">
+               <h3 class="author_name">${postsList[i].autore.nome}</h3>
+               <h4 class="date">${postsList[i].data}</h4>
+           </div>
+
+       </div>
+
+       <p class="content">${postsList[i].contenuto}</p>
+       <div class="image">${postsList[i].immagine}/div>
+
+       <div class="likes">
+           <button class="your_like">LIKE</button>
+           <h3 class="current_likes">${postsList[i].likes}</h3>
+       </div>
+
+                        </div>`
+        postsListRef.innerHTML += thisPost;
     }
+
+    // console.log(postsList[1].autore.avatar);
