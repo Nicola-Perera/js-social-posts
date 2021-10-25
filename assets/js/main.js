@@ -5,6 +5,7 @@
     Un secondo array conterrà solo gli id dei posts a cui abbiamo dato like.
 */
 
+// lista con i post da pubblicare nella pagina
 const postsList = [
     {
         id: `vacanze`,
@@ -15,6 +16,7 @@ const postsList = [
             avatar: `foto profilo`
         },
         likes: 123,
+        myLike: 0,
         data: `25/10/21`
     },
 
@@ -27,8 +29,21 @@ const postsList = [
             avatar: `foto profilo`
         },
         likes: 789,
+        myLike: 1,
         data: `13/05/90`
     }
 ];
 
-console.log(postsList);
+// console.log(postsList);
+
+// collegamento alla lista contenitore dei post
+const postsListRef = document.getElementById('container');
+// console.log(postsListRef);
+
+for (let i = 0; i < postsList.length; i++) {
+    const post = postsList[i];
+
+    for (const key in post) {
+            console.log(post[key]);
+        }
+    }
